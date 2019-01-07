@@ -9,7 +9,8 @@ open class Book(var title: String, var author: String){
     }
 }
 
-class EBook(): Book(){
+class EBook(title: String, author: String, var format: String = "text"): Book(title, author){
+
     private var wordCount: Int = 0
 
     override fun readPage() {

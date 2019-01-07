@@ -3,17 +3,7 @@ package Aquarium
 fun main(args: Array<String>) {
     buildAquarium()
 
-    val simpleSpice = SimpleSpice()
-    println("Name: ${simpleSpice.name}\n" +
-            "Heat: ${simpleSpice.heat}")
-
-    val listOfSpice: List<Spice> = listOf(
-        Spice("Oregano"),
-        Spice("Kminek", "lagodne"),
-        Spice("Ostra Papryka", "extremely spicy"),
-        Spice("Srednia Papryka", "hot"))
-
-    val listOfMoreSpicy = listOfSpice.filter { it.heat > 3 }
+    makeFish()
 }
 
 fun buildAquarium() {
@@ -37,4 +27,22 @@ fun buildAquarium() {
             "length ${myAquarium2.length} " +
             "width ${myAquarium2.width} " +
             "height ${myAquarium2.height}")
+}
+
+fun feedFish(fish: FishAction) {
+    // make some food then
+    fish.eat()
+}
+
+fun makeFish(){
+    val shark = Shark()
+    val pleco = Plecosomus()
+
+    println("Shark: ${shark.color} \nPlecostomus: ${pleco.color}")
+
+    shark.eat()
+    pleco.eat()
+
+    feedFish(shark)
+    feedFish(pleco)
 }
