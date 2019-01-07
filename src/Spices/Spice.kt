@@ -8,7 +8,7 @@ class SimpleSpice {
         get() = when(spiciness){ "mild" -> 5 else -> 0}
 }
 
-class Spice(name: String, val spiciness: String = "mild"){
+abstract class Spice(name: String, private val spiciness: String = "mild"){
 
     init {
         println("Name: $name, spiciness: $spiciness, it is number: $heat")
