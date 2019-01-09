@@ -27,3 +27,30 @@ class TowerTank(): Aquarium() {
         set(value) { height = (value * 1_000) / (width * length)}
 }
 
+fun String.hasSpaces(): Boolean{
+    val found = this.find{it == ' '}
+    return found != null
+}
+
+fun String.hasSpaces2() = find { it == ' ' } != null
+
+fun extensionsExample(){
+    "Does it have spaces?".hasSpaces()
+}
+
+open class AquariumPlant(val color: String, private val size: Int)
+class GreenLeafyPlant(size: Int): AquariumPlant("Green", size)
+
+fun AquariumPlant.isRed() = color == "Red"
+
+fun AquariumPlant.print() = println("AquariumPlant")
+
+fun GreenLeafyPlant.print() = kotlin.io.println("GreenLeafyPlant")
+
+fun staticExample() {
+    val plant = GreenLeafyPlant(size = 50)
+    plant.print()
+
+    val aquariumPlant: AquariumPlant = plant
+
+}
